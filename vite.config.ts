@@ -10,6 +10,7 @@ export default defineConfig((configEnv?: { mode?: string }) => {
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = path.dirname(__filename);
   return {
+    base: "/potfolio/",
     server: {
       host: "::",
       port: 8080,
