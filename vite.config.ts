@@ -5,7 +5,8 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }: { mode: string }) => {
+export default defineConfig((configEnv?: { mode?: string }) => {
+  const mode = configEnv?.mode || process.env.NODE_ENV || "production";
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = path.dirname(__filename);
   return {
